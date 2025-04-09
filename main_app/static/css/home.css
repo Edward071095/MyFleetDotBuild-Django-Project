@@ -23,8 +23,10 @@ main {
     max-width: 375px;
   }
   
-  .car-container {
-    width: 80%;
+  .car-container img {
+    display: flex;
+    justify-content: center;
+    /* width: 80%; */
   }
   
   .login {

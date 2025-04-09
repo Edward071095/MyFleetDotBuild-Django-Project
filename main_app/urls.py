@@ -7,6 +7,7 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('about/', views.about, name='about'),
     path('cars/', views.car_index, name='car-index'),
+    path('cars/<int:car_id>/', views.car_detail, name='car-detail'),
 ]
 
 if settings.DEBUG:

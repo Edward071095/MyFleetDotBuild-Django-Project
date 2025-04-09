@@ -13,6 +13,7 @@
 <section class="card-container">
     {% for car in cars %}
     <div class="card">
+      <a href="{% url 'car-detail' car.id %}">
       <div class="card-content">
         <div class="card-img-container">
 
@@ -26,6 +27,7 @@
         <img src="{% static 'images/classic-garage.png' %}" alt="default image" />
         {% endif %}
       </div>
+     </a>
     </div>
      {% endfor %}
 </section>

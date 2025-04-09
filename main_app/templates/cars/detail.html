@@ -1,0 +1,20 @@
+Copy
+{% extends 'base.html' %} 
+{% load static %} 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/cars/car-detail.css' %}">
+{% endblock %} 
+{% block content %}
+<section class="car-container">
+   <div class="car-details">
+      <h1>{{ car.make }}</h1>
+        <p> {{ car.model }} </p>
+        <p> {{ car.year }}</p>
+        {% if car.image %}
+        <img class="car-image" src="{{ car.image.url }}" alt="{{ car.make }}" />
+        {% else %}
+        <img src="{% static 'images/classic-garage.png' %}" alt="default image" />
+        {% endif %}
+   </div>
+</section>
+{% endblock %}
