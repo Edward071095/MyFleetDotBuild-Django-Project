@@ -5,7 +5,7 @@
 />
 {% endblock %} {% block content %}
 
-<section class="'page-header">
+<section class="page-header">
     <h1>The Dream Garage</h1>
 
 </section>
@@ -15,15 +15,16 @@
     <div class="card">
       <div class="card-content">
         <div class="card-img-container">
-           <!-- <img
-              src=""
-              alt="No Image Available"
-           /> -->
+
         </div>
         <h2 class="card-title">{{ car.make }}</h2>
         <p> {{ car.model }} </p>
         <p> {{ car.year }}</p>
-        <p> {{ car.image }}</p>
+        {% if car.image %}
+        <img class="car-image" src="{{ car.image.url }}" alt="{{ car.make }}" />
+        {% else %}
+        <img src="{% static 'images/classic-garage.png' %}" alt="default image" />
+        {% endif %}
       </div>
     </div>
      {% endfor %}
