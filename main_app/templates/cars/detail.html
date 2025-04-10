@@ -15,6 +15,11 @@ Copy
         {% else %}
         <img src="{% static 'images/classic-garage.png' %}" alt="default image" />
         {% endif %}
+
+        <div class="car-control">
+          <a href="{% url 'car-update' car.id %}" class="btn edt">Edit</a>
+          <a href="{% url 'car-delete' car.id %}" class="btn dlt">Delete</a>
+        </div>
    </div>
 </section>
 {% endblock %}

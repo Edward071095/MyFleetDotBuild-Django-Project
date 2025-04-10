@@ -1,0 +1,22 @@
+{% extends 'base.html' %}  
+{% load static %} 
+{% block content %}
+
+<div>
+  <h1>Delete Vehicle?</h1>
+  {% if car.image %}
+  <img class="car-image" src="{{ car.image.url }}" alt="{{ car.make }}" />
+  {% else %}
+  <img src="{% static 'images/classic-garage.png' %}" alt="default image" />
+  {% endif %}
+</div>
+
+<h2>Are you sure you want to delete this vehicle?</h2>
+
+<form action="" method="post" enctype="multipart/form-data" class="form-container">
+   {% csrf_token %}
+   <a href="{% url 'car-detail' car.id %}" class="cncl btn">Cancel</a>
+   <button type="submit" class="cnfrm dlt dtn">Yes - Delete</button>
+</form>
+
+{% endblock %}

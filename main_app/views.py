@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Car
 
 
@@ -21,3 +21,11 @@ def car_detail(request, car_id):
 class CarCreate(CreateView):
     model = Car
     fields = ['make', 'model', 'year', 'image']
+
+class CarUpdate(UpdateView):
+    model = Car
+    fields = ['make', 'model', 'year', 'image']
+
+class CarDelete(DeleteView):
+    model = Car
+    success_url = '/cars/'
