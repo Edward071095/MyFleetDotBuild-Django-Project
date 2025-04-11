@@ -140,6 +140,12 @@ STATIC_URL = 'static/'
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
+LOGIN_URL = 'home'
+
+LOGIN_REDIRECT_URL = 'car-index'
+
+LOGOUT_REDIRECT_URL = 'home'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 

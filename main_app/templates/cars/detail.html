@@ -22,4 +22,44 @@ Copy
         </div>
    </div>
 </section>
+
+<div class="info-container">
+  <section class="info">
+    <div class="subsection-title">
+       <h2>Extended Vehicle Information</h2>
+    </div>
+    <table>
+      {% if car.info_set.exists %}
+        <thead>
+            <tr>
+                <th>Color</th>
+                <th>Mileage</th>
+            </tr>
+        </thead>
+        {% endif %}
+       <tbody>
+           {% for info in car.info_set.all %}
+             <tr>
+                <td>{{info.color}}</td>
+                <td>{{info.mileage}}</td>
+             </tr>
+           {% endfor %}  
+       </tbody>
+    </table>
+  </section>
+</div>
+
+{% if not car.info_set.all %}
+<h3>Add Extended Info</h3>
+<form 
+   action="{% url 'add-info' car.id %}" 
+   method="post" 
+   class="subsection-content" 
+   autocomplete="off">
+  {% csrf_token %}
+  {{ info_form.as_p }}
+  <button type="submit" class="btn submir">Add Info</button>
+</form>
+{% endif %}
+
 {% endblock %}
