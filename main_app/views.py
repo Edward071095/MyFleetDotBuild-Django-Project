@@ -61,11 +61,19 @@ class RimCreate(LoginRequiredMixin, CreateView):
     model = Rim
     fields = '__all__'
 
-class RimList(ListView):
+class RimList(LoginRequiredMixin, ListView):
     model = Rim
 
-class RimDetail(DetailView):
+class RimDetail(LoginRequiredMixin, DetailView):
     model = Rim
+
+class RimUpdate(LoginRequiredMixin, UpdateView):
+    model = Rim
+    fields = ['brand', 'diameter', 'description', 'image']
+
+class RimDelete(LoginRequiredMixin, DeleteView):
+    model = Rim
+    success_url = '/rims/'
 
 def signup(request):
     error_message = ''

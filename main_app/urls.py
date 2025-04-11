@@ -20,6 +20,8 @@ urlpatterns = [
     path('rims/create', views.RimCreate.as_view(), name='rim-create'),
     path('rims/<int:pk>/', views.RimDetail.as_view(), name='rim-detail'),
     path('rims/', views.RimList.as_view(), name='rim-index'),
+    path('rims/<int:pk>/update/', views.RimUpdate.as_view(), name='rim-update'),
+    path('rims/<int:pk>/delete/', views.RimDelete.as_view(), name='rim-delete'),
 ]
 
 if settings.DEBUG:

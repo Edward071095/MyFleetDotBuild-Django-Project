@@ -1,0 +1,22 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block content %}
+
+<div>
+  <h1>Delete Rim?</h1>
+  {% if rim.image %}
+  <img class="rim-image" src="{{ rim.image.url }}" alt="{{ rim.description }}" />
+  {% else %}
+  <img src="{% static 'images/classic-garage.png' %}" alt="default image" />
+  {% endif %}
+</div>
+<h2>Are you sure you want to delete {{object.diameter}} {{ object.brand }}?</h2>
+
+<form action="" method="post" class="form">
+   {% csrf_token %}
+    <a href="{% url 'rim-detail' rim.id %}" class="cncl btn"> Cancel </a>
+    <button type="submit" class="cnfrm dlt btn">Yes - Delete!</button>
+</form>
+
+{% endblock %}
+

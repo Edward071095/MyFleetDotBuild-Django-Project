@@ -1,0 +1,25 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/rims/rim-detail.css/' %}" />
+{% endblock %} 
+{% block content %}
+
+<div class="card">
+<div class="card-bg"></div> 
+    <div class="card-content">
+        <h2>{{ rim.brand }}</h2>
+        <p>{{ rim.diameter }}</p>
+        <p>{{ rim.description }}</p>
+        {% if rim.image %}
+        <img class="rim-image" src="{{ rim.image.url }}" alt="{{ rim.description }}" />
+        {% else %}
+        <img src="{% static 'images/classic-garage.png' %}" alt="default image" />
+        {% endif %}
+    </div>
+</div>
+<a href="{% url 'rim-update' rim.id %}" class="btn edt">Edit</a>
+<a href="{% url 'rim-delete' rim.id %}" class="btn dlt">Delete</a>
+
+{% endblock %}
+

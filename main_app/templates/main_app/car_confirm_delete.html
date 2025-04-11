@@ -16,7 +16,7 @@
 <form action="" method="post" enctype="multipart/form-data" class="form-container">
    {% csrf_token %}
    <a href="{% url 'car-detail' car.id %}" class="cncl btn">Cancel</a>
-   <button type="submit" class="cnfrm dlt dtn">Yes - Delete</button>
+   <button type="submit" class="cnfrm dlt btn">Yes - Delete</button>
 </form>
 
 {% endblock %}
