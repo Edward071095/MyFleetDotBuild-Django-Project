@@ -56,4 +56,8 @@ main {
     font-size: var(--font-reg);
     z-index: 1;
   }
+
+  .rim-image {
+    width: 70px;
+  }
   

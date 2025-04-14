@@ -21,6 +21,7 @@ class Car(models.Model):
     model = models.CharField(max_length=100)
     year = models.IntegerField()
     image = models.ImageField(upload_to='car_images/', null=True, blank=True)
+    rims = models.ManyToManyField(Rim)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
