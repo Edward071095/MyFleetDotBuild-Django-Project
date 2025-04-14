@@ -54,41 +54,44 @@
   </div> -->
   
   <h2>{{ car.year }} {{ car.make }} {{ car.model }}'s Custom Rims</h2>
-  <div class="subsection-content">
-   {% if car.rims.count %}
+<div class="subsection-content">
+  {% if car.rims.count %}
     {% for rim in car.rims.all %}
       <div class="rim-container">
         <div class="color-block"></div>
         <a href="{% url 'rim-detail' rim.id %}">
-           <p>{{ rim.diameter }} {{ rim.brand }}'s </p>
+          <p>{{ rim.diameter }} {{ rim.brand }}'s </p>
         </a>
-    </div>
+        <form action="{% url 'remove-rim' car.id rim.id %}" method="post">
+          {% csrf_token %}
+          <button type="submit" class="rmv btn">Remove Rims</button>
+        </form>
+      </div>
     {% endfor %}
-   {% else %}
+  {% else %}
     <p class="no-rims">Add Rims to your {{ car.year }} {{ car.make }} {{ car.model }}</p>
-    {% endif %}
-  </div>
 
-  <h3>Available Rims</h3>
-  <div class="subsection-content">
-    {% if rims.count %}
+    <h3>Available Rims</h3>
+    <div class="subsection-content">
       {% for rim in rims.all %}
         <div class="rim-container">
-         <div class="color-block">
-          <a href="{% url 'rim-detail' rim.id %}">
-             <p>{{ rim.diameter }} {{ rim.brand }}'s</p></div>
-          </a>
+          <div class="color-block">
+            <a href="{% url 'rim-detail' rim.id %}">
+              <p>{{ rim.diameter }} {{ rim.brand }}'s</p>
+            </a>
+          </div>
           <form action="{% url 'associate-rim' car.id rim.id %}" method="post">
             {% csrf_token %}
             <button type="submit" class="btn submit">Add Custom Rims</button>
           </form>
         </div>
-      {% endfor %}  
-    {% else %}
-      <p class="added-rims"> {{ car.year }} {{ car.make }} {{ car.model }} already has {{ rim.diameter }} {{ rim.brand }}'s for its custom wheels. </p>
-    {% endif %}
-  </div>
-</section>
+      {% empty %}
+        <p>No available rims at the moment.</p>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>
+
 
 {% if not car.info_set.all %}
 <h3>Add Extended Info</h3>

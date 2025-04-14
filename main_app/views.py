@@ -50,6 +50,13 @@ def associate_rim(request, car_id, rim_id):
     Car.objects.get(id=car_id).rims.add(rim_id)
     return redirect('car-detail', car_id=car_id)
 
+@login_required
+def remove_rim(request, car_id, rim_id):
+    car = Car.objects.get(id=car_id)
+    rim = Rim.objects.get(id=rim_id)
+    car.rims.remove(rim_id)
+    return redirect('car-detail', car_id=car.id)
+
 class CarCreate(LoginRequiredMixin, CreateView):
     model = Car
     fields = ['make', 'model', 'year', 'image']
