@@ -22,6 +22,7 @@ urlpatterns = [
     path('rims/', views.RimList.as_view(), name='rim-index'),
     path('rims/<int:pk>/update/', views.RimUpdate.as_view(), name='rim-update'),
     path('rims/<int:pk>/delete/', views.RimDelete.as_view(), name='rim-delete'),
+    path('cars/<int:car_id>/associate-rim/<int:rim_id>/', views.associate_rim, name='associate-rim'),
 ]
 
 if settings.DEBUG:

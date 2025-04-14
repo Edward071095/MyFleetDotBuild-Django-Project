@@ -10,6 +10,8 @@ from .models import Car, Rim
 from .forms import InfoForm
 
 
+
+
 # Create your views here.
 class Home(LoginView):
     template_name = 'home.html'
@@ -25,9 +27,12 @@ def car_index(request):
 @login_required
 def car_detail(request, car_id):
     car = Car.objects.get(id=car_id)
+    rims = Rim.objects.all()
     info_form = InfoForm()
     return render(request, 'cars/detail.html', {
-        'car': car, 'info_form': info_form
+        'car': car, 
+        'info_form': info_form,
+        'rims': rims
         })
 
 @login_required
@@ -39,6 +44,10 @@ def add_info(request, car_id):
         new_info = form.save(commit=False)
         new_info.car_id = car_id
         new_info.save()
+    return redirect('car-detail', car_id=car_id)
+
+def associate_rim(request, car_id, rim_id):
+    Car.objects.get(id=car_id).rims.add(rim_id)
     return redirect('car-detail', car_id=car_id)
 
 class CarCreate(LoginRequiredMixin, CreateView):
