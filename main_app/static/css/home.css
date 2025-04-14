@@ -1,89 +1,85 @@
-main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    height: 100%;
-  }
-  
-  main > section {
-    width: 100%;
-    padding: 10px 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  
-  .header-logo-container {
-    display: none;
-  }
-  
-  .logo-container {
-    max-width: 375px;
-  }
-  
-  .car-container img {
-    display: flex;
-    justify-content: center;
-    /* width: 80%; */
-  }
-  
-  .login {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-  }
-  
-  .login h1 {
-    font-size: clamp(3.2rem, 3vw, 4.8rem);
-    margin: 10px 0;
-  }
-  
-  .login > p {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: 14px 0 0px;
-  }
-  
-  .login label {
-    font-size: var(--font-reg);
-    margin-bottom: 6px;
-  }
-  
-  .login input {
-    font-size: var(--font-l);
-    padding: 2px 4px;
-  }
-  
-  .login .btn {
-    align-self: flex-end;
-    margin-right: 0;
-    margin-top: 16px;
-  }
-  
-  @media only screen and (min-width: 768px) {
-    main {
-      justify-content: space-around;
-    }
-  
-    main > section {
-      width: 40%;
-    }
-  
-    .login {
-      border: var(--borders);
-      padding: 20px;
-      border-radius: var(--card-border-radius);
-      box-shadow: var(--card-box-shadow);
-      width: 100%;
-    }
-  
-    .logo-container {
-      max-width: 520px;
-    }
-  }
-  
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background: #0a203d; /* Deep Navy */
+  color: #fefefe;
+  margin: 0;
+  padding: 0;
+}
+
+/* Logo Section */
+.logo-container {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(180deg, #102e4a 0%, #0a203d 100%);
+  border-bottom: 2px solid #d4af37; /* Gold */
+}
+
+.car-container img {
+  max-width: 300px;
+  width: 90%;
+  filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.3)); /* Gold glow */
+  transition: transform 0.3s ease;
+}
+
+.car-container img:hover {
+  transform: scale(1.05);
+}
+
+/* Login Form Styling */
+.login {
+  max-width: 400px;
+  margin: 4rem auto;
+  background-color: #122c4a; /* Slightly lighter navy */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  border: 1px solid #d4af37; /* Gold border */
+}
+
+.login h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #d4af37;
+  font-size: 2rem;
+}
+
+.login label {
+  font-weight: 600;
+  display: block;
+  margin: 1rem 0 0.3rem;
+  color: #fefefe;
+}
+
+.login input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d4af37;
+  border-radius: 6px;
+  background: #1d3a60;
+  color: #fff;
+}
+
+.login input:focus {
+  outline: none;
+  background: #254b76;
+}
+
+/* Submit Button */
+.btn.submit {
+  margin-top: 1.5rem;
+  background: #d4af37;
+  color: #0a203d;
+  border: none;
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn.submit:hover {
+  background: #bfa033;
+  color: #ffffff;
+}

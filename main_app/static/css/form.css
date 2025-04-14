@@ -1,40 +1,164 @@
+/* Base page background */
+body {
+  background-color: #0a203d;
+  color: #fefefe;
+  font-family: 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header with optional image */
+.page-header {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+}
+
+.page-header h1 {
+  font-size: 2rem;
+  color: #d4af37;
+  margin-bottom: 1rem;
+}
+
+.page-header img {
+  max-width: 300px;
+  height: auto;
+  margin-top: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+}
+
+/* Form wrapper */
 .form-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-  
-  table {
-    padding: 0 40px;
-    width: 100%;
-    border-spacing: 0 20px;
-  }
-  
-  th {
-    text-align: left;
-    padding: 6px 20px 0 0;
-    font-weight: normal;
-    vertical-align: top;
-    font-size: var(--font-reg);
-  }
-  
-  td {
-    max-width: 60%;
-  }
-  
-  td > * {
-    width: 100%;
-    padding: 2px 4px;
-    font-size: var(--font-l);
-  }
-  
-  td > textarea {
-    height: calc(4 * var(--font-l) + 8px);
-    font-family: inherit;
-  }
-  
-  .btn {
-    align-self: flex-end;
-    margin-right: 40px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: #102e4a;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 2px solid #d4af37;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Table layout for Django form */
+table {
+  width: 100%;
+  border-spacing: 0 1.5rem;
+}
+
+th {
+  text-align: left;
+  padding-right: 1.5rem;
+  font-weight: 600;
+  color: #fefefe;
+  vertical-align: top;
+  font-size: 1rem;
+}
+
+td {
+  width: 100%;
+}
+
+td > * {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #d4af37;
+  border-radius: 6px;
+  background-color: #0f2b4b;
+  color: #fefefe;
+}
+
+/* Textarea height */
+td > textarea {
+  height: 6rem;
+  resize: vertical;
+}
+
+/* Submit button */
+.btn.submit {
+  align-self: flex-end;
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  background-color: #d4af37;
+  color: #0a203d;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn.submit:hover {
+  background-color: #bfa033;
+  color: #ffffff;
+}
+
+.delete-card {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2rem;
+  border: 2px solid #d4af37;
+  border-radius: 16px;
+  background-color: #102e4a;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+  text-align: center;
+  position: relative;
+}
+
+.card-content h1 {
+  color: #d4af37;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.card-content h2 {
+  color: #fefefe;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+.car-image {
+  width: 200px;
+  margin: 1rem 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  font-size: 1rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.cncl {
+  background-color: #d4af37;
+  color: #0a203d;
+  border: none;
+}
+
+.cncl:hover {
+  background-color: #254b76;
+}
+
+.dlt {
+  background-color: #d4af37;
+  color: #0a203d;
+  border: none;
+}
+
+.dlt:hover {
+  background-color: #254b76;
+}

@@ -1,22 +1,32 @@
 {% extends 'base.html' %} 
 {% load static %} 
-{% block content %}
 
-<div>
-  <h1>Delete Rim?</h1>
-  {% if rim.image %}
-  <img class="rim-image" src="{{ rim.image.url }}" alt="{{ rim.description }}" />
-  {% else %}
-  <img src="{% static 'images/classic-garage.png' %}" alt="default image" />
-  {% endif %}
-</div>
-<h2>Are you sure you want to delete {{object.diameter}} {{ object.brand }}?</h2>
-
-<form action="" method="post" class="form">
-   {% csrf_token %}
-    <a href="{% url 'rim-detail' rim.id %}" class="cncl btn"> Cancel </a>
-    <button type="submit" class="cnfrm dlt btn">Yes - Delete!</button>
-</form>
-
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/form.css' %}" />
 {% endblock %}
 
+{% block content %}
+
+<div class="delete-card">
+  <div class="card-content">
+    <h1>Delete Rim?</h1>
+
+    {% if rim.image %}
+    <img class="car-image" src="{{ rim.image.url }}" alt="{{ rim.description }}" />
+    {% else %}
+    <img class="car-image" src="{% static 'images/classic-garage.png' %}" alt="default image" />
+    {% endif %}
+
+    <h2>Are you sure you want to delete the {{ object.diameter }} {{ object.brand }}?</h2>
+
+    <form action="" method="post" class="form-container">
+      {% csrf_token %}
+      <div class="btn-group">
+        <a href="{% url 'rim-detail' rim.id %}" class="btn cncl">Cancel</a>
+        <button type="submit" class="btn dlt">Yes - Delete</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

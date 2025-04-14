@@ -6,20 +6,25 @@
 {% block content %}
 
 <div class="card">
-<div class="card-bg"></div> 
+    <div class="card-bg"></div> 
     <div class="card-content">
-        <h2>{{ rim.brand }}</h2>
-        <p>{{ rim.diameter }}</p>
-        <p>{{ rim.description }}</p>
-        {% if rim.image %}
+      <h2>{{ rim.brand }}</h2>
+      <p>{{ rim.diameter }}</p>
+      <p>{{ rim.description }}</p>
+  
+      {% if rim.image %}
         <img class="rim-image" src="{{ rim.image.url }}" alt="{{ rim.description }}" />
-        {% else %}
-        <img src="{% static 'images/classic-garage.png' %}" alt="default image" />
-        {% endif %}
+      {% else %}
+        <img src="{% static 'images/classic-garage.png' %}" alt="default image" class="rim-image"/>
+      {% endif %}
+  
+      <div class="btn-group">
+        <a href="{% url 'rim-update' rim.id %}" class="btn edt">Edit</a>
+        <a href="{% url 'rim-delete' rim.id %}" class="btn dlt">Delete</a>
+      </div>
     </div>
-</div>
-<a href="{% url 'rim-update' rim.id %}" class="btn edt">Edit</a>
-<a href="{% url 'rim-delete' rim.id %}" class="btn dlt">Delete</a>
+  </div>
+  
 
 {% endblock %}
 

@@ -22,7 +22,7 @@
             {% if rim.image %}
             <img class="rim-image" src="{{ rim.image.url }}" alt="{{ rim.description }}" />
             {% else %}
-            <img src="{% static 'images/classic-garage.png' %}" alt="default image" />
+            <img class="rim-image" src="{% static 'images/classic-garage.png' %}" alt="default image" />
             {% endif %}
          </div>
        </a>   

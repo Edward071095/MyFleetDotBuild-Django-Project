@@ -1,63 +1,106 @@
-main {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    min-height: auto;
-  }
-  
-  .card {
-    width: 424px;
-    height: 424px;
-    margin: 25px 25px 15px 40px;
-    border: solid 2px;
-    box-shadow: var(--card-box-shadow);
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;  
-  }
-  
-  .card-bg {
-    opacity: 0.4;
-    position: absolute;
-    display: inline-flex;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-  }
-  
-  .card-content {
-    /* padding: 15px; */
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    position: relative;
-    color: var(--text-color);
-    z-index: 1;
-  }
-  
-  .btn {
-    margin-bottom: 15px;
-  }
-  
-  .card h2 {
-    margin: 7px 0;
-    font-size: var(--font-xl);
-    z-index: 1;
-  }
-  
-  .card p {
-    margin: 0;
-    font-size: var(--font-reg);
-    z-index: 1;
-  }
+/* Full background to match the theme */
+body {
+  background-color: #0a203d;
+  color: #fefefe;
+  font-family: 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-  .rim-image {
-    width: 70px;
-  }
-  
+/* Card styling */
+.card {
+  width: 424px;
+  height: auto;
+  margin: 3rem auto;
+  border: 2px solid #d4af37;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #102e4a;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Dim background layer */
+.card-bg {
+  opacity: 0.1;
+  position: absolute;
+  background: url('/static/images/gold-texture.png') no-repeat center;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Content on top */
+.card-content {
+  padding: 2rem;
+  z-index: 1;
+  text-align: center;
+}
+
+/* Rim image */
+.rim-image {
+  width: 150px;
+  margin-top: 1rem;
+  border-radius: 8px;
+  border: 2px solid #d4af37;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+/* Typography */
+.card h2 {
+  font-size: 2rem;
+  color: #d4af37;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 1.1rem;
+  color: #fefefe;
+  margin: 0.25rem 0;
+}
+
+/* Buttons in a flex row */
+.btn-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+/* Button variants */
+.edt {
+  background-color: #1d3a60;
+  color: #fefefe;
+  border: 1px solid #d4af37;
+}
+
+.dlt {
+  background-color: #d4af37;
+  color: #0a203d;
+  border: none;
+}
+
+.edt:hover {
+  background-color: #254b76;
+}
+
+.dlt:hover {
+  background-color: #bfa033;
+  color: #ffffff;
+}

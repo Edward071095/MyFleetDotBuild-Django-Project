@@ -1,85 +1,129 @@
+/* --- Base Reset and Typography --- */
 body {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-      'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-      'Helvetica Neue', sans-serif;
-    min-height: 100vh;
-    --nav-bg: rgba(104, 197, 248, 0.7);
-    --nav-bg-ff: rgba(104, 197, 248, 0.9);
-    --borders: rgb(36, 116, 248) solid 2px;
-    --text-color: rgb(17, 20, 17);
-    --link-hover-color: rgb(16, 56, 158);
-    --button-bg: rgb(245, 245, 245);
-    --button-bg-hover: rgb(226, 226, 226);
-    --submit: rgb(26, 128, 0);
-    --warn: rgb(255, 102, 0);
-    --danger: rgb(220, 20, 30);
-    --secondary: rgb(57, 57, 57);
-    --card-box-shadow: 5px 5px 6px -1px #aaa;
-    --font-xtreme: 4.2rem;
-    --font-xxl: 3.6rem;
-    --font-xl: 2.4rem;
-    --font-l: 1.8rem;
-    --font-reg: 1.6rem;
-    --card-border-radius: 6px;
-  }
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+  background-color: #f4f6f8;
+  color: var(--text-color);
+  min-height: 100vh;
+  --nav-bg: rgba(10, 32, 61, 0.9);          
+  --nav-bg-ff: rgba(10, 32, 61, 1);          
+  --borders: #d4af37 solid 2px;              
+  --text-color: #0a203d;                  
+  --link-hover-color: #d4af37;              
+  --button-bg: #f4f4f4;
+  --button-bg-hover: #e2e2e2;
+  --submit: #0a203d;                    
+  --warn: #ff6600;
+  --danger: #0a203d;
+  --secondary: #393939;
+  --card-box-shadow: 5px 5px 6px -1px #aaa;
+  --font-xtreme: 4.2rem;
+  --font-xxl: 3.6rem;
+  --font-xl: 2.4rem;
+  --font-l: 1.8rem;
+  --font-reg: 1.6rem;
+  --card-border-radius: 6px;
 
-  header {
-    width: 100%; 
-    background-image: url('/static/images/new-header-logo.png');
-    background-size: cover;
-    background-position: center; 
-    background-repeat: no-repeat;
-    border-bottom: var(--borders);
-    min-height: 250px; 
-  }
+}
 
-  .header-logo-img {
-    width: 50px;
-  }
+header {
+  width: 100%;
+  background-color: var(--nav-bg-ff);
+  border-bottom: var(--borders);
+  padding: 2rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 
-  #logout-form button {
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: 600;
-    font-size: 16px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    font-family: inherit;
-  }
-  
-  #logout-form button:hover {
-    color: var(--link-hover-color);
-  }
 
-  /* .header-logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; 
-    margin-top: -30px; 
-  }  
-  
+.header-title-container {
+  margin-bottom: 1rem;
+}
 
-  .header-logo-container img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    position: relative;
-    top: -20px;
-    margin: 0 auto;
-    mix-blend-mode: multiply;
-  } 
+.header-title {
+  font-size: var(--font-xxl);
+  font-weight: 800;
+  color: #d4af37; /* Gold text */
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
 
-  .header-logo-container a {
-    display: inline-block; 
-    width: 100%;
-  } */
-  
-  
-  
-  
+
+.header-title:hover {
+  color: #ffffff;
+}
+
+
+
+.header-logo-img {
+  width: 80px;
+  height: auto;
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
+}
+
+/* --- Navigation Bar --- */
+nav {
+  background-color: var(--nav-bg);
+  backdrop-filter: blur(4px);
+  width: 100%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0.8rem 1rem;
+  margin: 0;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fefefe;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #d4af37;
+}
+
+/* --- Logout Button --- */
+#logout-form {
+  display: inline;
+}
+
+#logout-form button {
+  background: none;
+  border: none;
+  color: #fefefe;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color 0.2s ease;
+}
+
+#logout-form button:hover {
+  color: #d4af37;
+}
+
+
+/* --- Main Content Area --- */
+main {
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem;
+  margin: 0 auto;
+}
