@@ -1,23 +1,22 @@
 body {
   font-family: 'Helvetica Neue', sans-serif;
-  background: #0a203d; /* Deep Navy */
+  background: #0a203d; 
   color: #fefefe;
   margin: 0;
   padding: 0;
 }
 
-/* Logo Section */
 .logo-container {
   text-align: center;
   padding: 4rem 2rem;
   background: linear-gradient(180deg, #102e4a 0%, #0a203d 100%);
-  border-bottom: 2px solid #d4af37; /* Gold */
+  border-bottom: 2px solid #d4af37;
 }
 
 .car-container img {
   max-width: 300px;
   width: 90%;
-  filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.3)); /* Gold glow */
+  filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.3));
   transition: transform 0.3s ease;
 }
 
@@ -25,15 +24,14 @@ body {
   transform: scale(1.05);
 }
 
-/* Login Form Styling */
 .login {
   max-width: 400px;
   margin: 4rem auto;
-  background-color: #122c4a; /* Slightly lighter navy */
+  background-color: #122c4a; 
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-  border: 1px solid #d4af37; /* Gold border */
+  border: 1px solid #d4af37; 
 }
 
 .login h1 {
@@ -64,7 +62,6 @@ body {
   background: #254b76;
 }
 
-/* Submit Button */
 .btn.submit {
   margin-top: 1.5rem;
   background: #d4af37;

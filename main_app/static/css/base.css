@@ -1,4 +1,3 @@
-/* --- Base Reset and Typography --- */
 body {
   margin: 0;
   padding: 0;
@@ -50,7 +49,7 @@ header {
 .header-title {
   font-size: var(--font-xxl);
   font-weight: 800;
-  color: #d4af37; /* Gold text */
+  color: #d4af37;
   text-decoration: none;
   letter-spacing: 1px;
   transition: color 0.3s ease;
@@ -69,7 +68,6 @@ header {
   filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
 }
 
-/* --- Navigation Bar --- */
 nav {
   background-color: var(--nav-bg);
   backdrop-filter: blur(4px);
@@ -99,7 +97,6 @@ nav ul li a:hover {
   color: #d4af37;
 }
 
-/* --- Logout Button --- */
 #logout-form {
   display: inline;
 }
@@ -120,7 +117,6 @@ nav ul li a:hover {
 }
 
 
-/* --- Main Content Area --- */
 main {
   width: 100%;
   max-width: 1200px;
