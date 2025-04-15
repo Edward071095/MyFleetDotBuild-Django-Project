@@ -17,9 +17,17 @@
 
 <form action="" method="post" enctype="multipart/form-data" class="form-container">
    {% csrf_token %}
-   <table>
-      {{ form.as_table }}
-   </table>
+    <div class="form-fields">
+      {% for field in form %}
+        <div class="form-row">
+          <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+          {{ field }}
+          {% if field.errors %}
+            <div class="error">{{ field.errors }}</div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>  
    <button type="submit" class="btn submit">Submit!</button>
 </form>
 

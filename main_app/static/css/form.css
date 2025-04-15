@@ -162,3 +162,40 @@ td > textarea {
 .dlt:hover {
   background-color: #254b76;
 }
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #fefefe;
+  font-size: 1rem;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #d4af37;
+  border-radius: 6px;
+  background-color: #0f2b4b;
+  color: #fefefe;
+  box-sizing: border-box;
+}
+
+.error {
+  margin-top: 0.25rem;
+  color: #ff6b6b;
+  font-size: 0.9rem;
+}
